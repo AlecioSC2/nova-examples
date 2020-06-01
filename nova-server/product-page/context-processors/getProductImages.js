@@ -6,8 +6,7 @@ const path = require('path');
 const getImageNames = id => fs.readdir(
   path.resolve(`${__dirname}/../static/images/products/${id}`)
 );
-console.log(  path.resolve(`${__dirname}/../../static/images/products/`)
-)
+
 module.exports = pathAwareContextProcessor.extend({
   name: 'Get Product Images',
   priority: 80,
@@ -15,7 +14,6 @@ module.exports = pathAwareContextProcessor.extend({
   async process(executionContext, contentModel) {
     const productId = contentModel.product.id || '';
     try {
-      console.log('test')
       const productImageNames = await getImageNames(productId);
       contentModel.product.images = productImageNames.map(
         imageName => `./images/products/${productId}/${imageName}`

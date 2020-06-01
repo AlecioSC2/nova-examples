@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const removeConfig = require('../generic-context-processors/removeConfig');
-console.log('this', path.join(__dirname, 'static'));
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
 const serverConfig = {
