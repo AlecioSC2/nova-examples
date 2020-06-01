@@ -1,0 +1,42 @@
+{
+  "name": "nova-examples",
+  "version": "1.0.0",
+  "description": "Nova Core and Nova Server Examples",
+  "scripts": {
+    "product-page": "nodemon nova-server/product-page --debug",
+    "user-greeting": "nodemon nova-server/user-greeting --debug",
+    "core-hello-world": "node nova-core/hello-world/helloWorld.js",
+    "core-hola-mundo": "node nova-core/hello-world/holaMundo.js",
+    "core-main-example": "node nova-core/main-example --debug",
+    "salary-calculator": "node nova-core/salary-calculator --debug"
+  },
+  "keywords": [
+    "nova",
+    "server",
+    "webserver",
+    "rest",
+    "api",
+    "expressjs",
+    "core",
+    "framework",
+    "examples"
+  ],
+  "author": {
+    "name": "Pablo Alecio",
+    "email": "paleciop@gmail.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.11.0",
+    "npm": ">=6.11.3"
+  },
+  "dependencies": {
+    "@palecio/nova-core": "^1.0.0",
+    "@palecio/nova-server": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "^1.19.1",
+    "riteway": "^6.1.2"
+  }
+}
