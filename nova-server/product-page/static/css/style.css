@@ -962,3 +962,7 @@ a {
   font-size: 15px;
   text-decoration: none !important;
 }
+
+.main-content, .related-products {
+  display: none;
+}

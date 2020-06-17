@@ -254,6 +254,10 @@ jQuery(document).ready(function($) {
     });
   };
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id') || 1;
+  const lang = urlParams.get('lang') || 'en';
+
   const starsTemplate = rating => `<span class="icon-star2 ${
     Math.floor(rating) > 0 ? 'text-warning' : ''
   }"></span>
@@ -281,14 +285,13 @@ jQuery(document).ready(function($) {
  </div>
 </div>`;
 
+
 const reviewsTemplate = reviews => {
 	const liTemplate = text => `<li>${text}</li>`;
-	const title = `<h5>Reviews</h5>`;
+	const title = `<h5>${lang === 'es'? 'Reseñas' : 'Reviews'}</h5>`;
 	return `${title}<ul>${reviews.map(liTemplate).join('')}</ul>`;
-}
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-const lang = urlParams.get('lang') || 'en';
+};
+
 
   const url = `//${document.location.hostname}:9001/api/${lang}/product/${id}`;
   fetch(url, {
@@ -309,13 +312,21 @@ const lang = urlParams.get('lang') || 'en';
 			$('.product-reviews').html(reviewsTemplate(product.reviews));
 			// Related Products JS
 
-      $('#related').html(
-        product.related
-          .map(({ title, rating, price, image }) =>
-            relatedItemTemplate(title, image, rating, price)
-          )
-          .join('')
-      );
+      if (product.related) {
+        $('.related-products-label').text(lang === 'es' ? 'Productos Relacionados' : 'Related Products');
+        $('.related-products').show();
+        $('#related').html(
+          product.related
+            .map(({ title, rating, price, image }) =>
+              relatedItemTemplate(title, image, rating, price)
+            )
+            .join('')
+        );
+      }
+
+      $('.preloader').hide();
+      $('.main-content').css('display', 'flex');
+      $('.buy-now').text(lang === 'es' ? 'Agregar al Carrito' : 'Add To Cart');
 			slider();
 
     });

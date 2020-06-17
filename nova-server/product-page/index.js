@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 const port = 3000;
-const removeConfig = require('../generic-context-processors/removeConfig');
 (() => {
   // load env variables. Didn't want to add a library just to do this so we do it manually.
   const lines = fs
@@ -26,9 +25,7 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 
 const serverConfig = {
   contextProcessorPaths: __dirname + '/context-processors',
-  contextProcessors: [removeConfig],
   baseContentModel: {
-    config: {},
     product: {}
   }
 };

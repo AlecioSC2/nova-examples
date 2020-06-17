@@ -30,9 +30,12 @@
     "node": ">=12.11.0",
     "npm": ">=6.11.3"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "dependencies": {
-    "@palecio/nova-core": "^1.0.0",
-    "@palecio/nova-server": "^1.0.0"
+    "@palecio/nova-core": "^1.4.1",
+    "@palecio/nova-server": "^1.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",

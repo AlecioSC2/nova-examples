@@ -1,6 +1,6 @@
 'use strict';
 
-const NonFatalError = require('../../../lib/errors/errors').NonFatalError;
+const NonFatalError = require('@palecio/nova-core').errors.NonFatalError;
 module.exports = {
   name: 'ErrorContextProcessor',
   priority: 100,

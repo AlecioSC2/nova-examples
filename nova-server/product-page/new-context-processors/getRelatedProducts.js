@@ -5,7 +5,6 @@ const path = require('path');
 const getImageNames = id => fs.readdir(
   path.resolve(`${__dirname}/../static/images/products/${id}`)
 );
-
 module.exports = pathAwareContextProcessor.extend({
   patterns: ['*/product/*'],
   priority: 60,
