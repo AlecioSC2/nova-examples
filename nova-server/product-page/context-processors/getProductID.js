@@ -6,7 +6,7 @@ module.exports = pathAwareContextProcessor.extend({
   priority: 99,
   patterns: ['*/product/*'],
   process(executionContext, contentModel) {
-    const requestPath = executionContext.request.path;
+    const requestPath = executionContext.path;
     const pathArray = requestPath.split('/');
     contentModel.product.id = pathArray.slice(-1).join();
   }

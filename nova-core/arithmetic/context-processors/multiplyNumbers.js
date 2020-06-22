@@ -1,5 +1,7 @@
 
-module.exports = {
+module.exports =
+
+const multiplyNumbers = {
   name: 'Multiply Numbers',
   priority: 90,
   categories: 'operaciones',

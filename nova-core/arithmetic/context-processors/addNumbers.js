@@ -7,3 +7,11 @@ module.exports = {
     contentModel.addition = contentModel.num1 + contentModel.num2;
   }
 };
+const addNumbers = {
+  name: 'Add Numbers',
+  priority: 100,
+  categories: 'operaciones',
+  process(executionContext, contentModel) {
+    contentModel.addition = contentModel.num1 + contentModel.num2;
+  }
+};

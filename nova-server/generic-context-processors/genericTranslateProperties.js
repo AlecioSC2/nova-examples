@@ -22,7 +22,6 @@ module.exports = pathAwareContextProcessor.extend({
   name: "Generic Translate Properties",
   async process(executionContext, contentModel) {
     const propertiesToTranslate = executionContext.config.propertiesToTranslate;
-    console.log('properties', executionContext.config);
     return (
       propertiesToTranslate &&
       Promise.all(

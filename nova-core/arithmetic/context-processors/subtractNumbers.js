@@ -1,5 +1,6 @@
 
-module.exports = {
+module.exports =
+const substractNumbers = {
   name: 'Subtract Numbers',
   priority: 100,
   categories: 'operaciones',
